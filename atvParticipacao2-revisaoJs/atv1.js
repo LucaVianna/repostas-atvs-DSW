@@ -11,41 +11,33 @@
 
 class Vec {
     constructor(x , y){
-        this.matrix = []
         this.eixoX = x
         this.eixoY = y
-        for (let aux1=this.eixoY-1; aux1>=0; aux1--){
-            this.matrix[aux1] = []
-            for (let aux2=this.eixoX-1; aux2>=0; aux2--)
-                this.matrix[aux1][aux2] = 0
-        }
     }
 
-    plus(vetor){
-        let eixoNovoX = vetor[0].length
-        let eixoNovoY = vetor.length
+    plus(novoX, novoY){
+        let somaX = novoX + this.eixoX
+        let somaY = novoY + this.eixoY
 
-        return console.log(`Soma dos Eixos X: ${eixoNovoX+this.eixoX}\nSoma dos Eixos Y: ${eixoNovoY+this.eixoY}`)
+        console.log(`Soma dos Eixos X: ${somaX}\nSoma dos Eixos Y: ${somaY}`)
     }
 
-    minus(vetor){
-        let eixoNovoX = vetor[0].length
-        let eixoNovoY = vetor.length
+    minus(novoX, novoY){
+        let menosX = this.eixoX - novoX
+        let menosY = this.eixoY - novoY
 
-        return console.log(`Sub dos Eixos X: ${this.eixoX-eixoNovoX}\nSub dos Eixos Y: ${this.eixoY-eixoNovoY}`)
+        console.log(`Sub dos Eixos X: ${menosX}\nSub dos Eixos Y: ${menosY}`)
+    }
+
+    get length(){
+        return Math.sqrt((this.eixoX ** 2) + (this.eixoY ** 2))
     }
 }
 
-matrizNova = [
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0]
-]
-
 matriz = new Vec(5, 8) //x e y da matriz
-console.log(matriz.matrix)
 
-matriz.plus(matrizNova) //soma dos eixos x e y das matrizes
-matriz.minus(matrizNova) //sub dos eixos x e y das matrizes
+matriz.plus(3, 3) //soma dos eixos x e y das matrizes
+
+matriz.minus(3, 3) //sub dos eixos x e y das matrizes
+
+console.log(`A distância dos eixos (${matriz.eixoX}, ${matriz.eixoY}) até a origem (0, 0) é ${matriz.length}`)

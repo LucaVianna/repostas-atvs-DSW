@@ -1,0 +1,3 @@
+nth = (numero, lista) => {
+    
+}
