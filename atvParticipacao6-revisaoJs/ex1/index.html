@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Web e HTTP</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CRUD com Fetch e JSONPlaceholder</h1>
+    
+    <button onclick=fetchPosts()>Get Posts</button>
+    <input id="postInput" type="number" placeholder="Digite o ID do Post">
+    <button onclick=fetchPostById()>Get Posts By ID</button>
+    <button onclick=postItem()>Post</button>
+    <button onclick=putPostId1()>Put Post 1</button>
+    <button onclick=deletePostId1()>Delete Post 1</button>
+    
+    <pre id="result"></pre>
+</body>
+</html>
